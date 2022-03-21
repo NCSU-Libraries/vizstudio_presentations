@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VizStudio Presentation</title>
+  <link rel="stylesheet" type="text/css" href="css/vizstudio.css"/>
+  <link rel="stylesheet" type="text/css" href="css/vizstudio_grid10.css"/>
+  <link rel="stylesheet" type="text/css" href="css/vizstudio_grid8.css"/>
+  <link rel="stylesheet" type="text/css" href="css/vizstudio_prez.css"/>
+
+  <!-- LOAD YOUR CUSTOM CSS HERE, e.g.:
+    <link  rel="stylesheet" type="text/css" href="css/my.css"/>
+  -->
+</head>
+
+<body>
+
+  <!-- #vizprez is the container for all visible elements -->
+  <div id="vizprez" class="vizstudio">
+    <!-- these 2 are twins that alternately load scenes to enable crossfades -->
+    <div class="zone-wrapper to-fade-in" id="zone-wrapper-1"> </div>
+    <div class="zone-wrapper to-fade-in" id="zone-wrapper-2"> </div>
+  </div>
+
+  <!-- #audio contains audio elements when needed; not visible -->
+  <div id="audio"></div>
+  
+  <!-- LOAD YOUR CUSTOM JAVASCRIPT HERE, e.g.:
+    <script src="js/my.js"></script>
+  -->
+
+  <!-- load core presentation javascript -->
+  <script type="text/javascript" src="js/vizstudio_utils.js"></script>
+  <script type="text/javascript" src="js/config.js"></script>
+  <script type="text/javascript" src="js/vizprez.js"></script>
+  <script type="text/javascript" src="js/transform_scale.js"></script>
+
+  <!-- initialize the presentation -->
+  <script>
+    new VizPrez('#vizprez', config());
+  </script>
+
+</body>
+
+</html>

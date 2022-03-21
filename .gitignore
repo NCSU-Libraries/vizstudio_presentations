@@ -1,0 +1,24 @@
+# Ignore all logfiles and tempfiles. and work files
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/.DS_Store
+/*/.DS_Store
+/_work
+
+# Ignore media files
+/media/*
+!/media/audio/.keep
+!/media/video/.keep
+!/media/images/.keep
+
+# Ignore demo JS
+/js/demo
+/*/demo
+/demo.html
+
+# ignore zips
+**/*.zip
+*.zip
+
