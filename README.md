@@ -23,7 +23,7 @@ The default grid divides the room into 12 zones, which can be combined to create
 8- and 10-zone grids are also available.
 
 The grid system and other basic layout rules are defined seprately in the 
-[Visualization Studio HTML Framework](https://github.ncsu.edu/ncsu-libraries/vizstudio_html_framework).
+[Visualization Studio HTML Framework](https://github.com/NCSU-Libraries/vizstudio_html_framework).
 
 The layout and content of each scene is defined via a Javascript configuration file.
 Scenes are presented in the order in which they are defined in this file. See below for details.
