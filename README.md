@@ -22,15 +22,13 @@ An HTML/CSS/Javascript framework for creating multimedia presentations in the vi
 The default grid divides the room into 12 zones, which can be combined to create layouts of 2, 3 ,4 , 6 and 12 equal-width zones, or any number of combinations of mixed-width zones.
 8- and 10-zone grids are also available.
 
-* The grid system and other basic layout rules are defined seprately in the 
-[Visualization Studio HTML Framework](https://github.com/NCSU-Libraries/vizstudio_html_framework).
-
 * The layout and content of each scene is defined via a Javascript configuration file.
 Scenes are presented in the order in which they are defined in this file. See below for details.
 
 * Movement between scenes is controlled via the keyboard. 
 
 > TODO: Enable self-running presentations that advance automatically wihtout keyboard input
+
 
 
 ## Directory structure and overview of included files
@@ -53,6 +51,53 @@ Scenes are presented in the order in which they are defined in this file. See be
 * `index.html` - The base HTML file – all content is presented via this file
 * `README.md` - The file you are reading right now.
 * `zip.sh` - A Linux/Mac shell script to zip presentation files for transfer
+
+
+## Layouts
+
+> The grid system is described in more detail in the 
+[Visualization Studio HTML Framework](https://github.com/NCSU-Libraries/vizstudio_html_framework).
+
+Layouts are built using a grid that divides the room into zones of equal widths.
+The default grid divides the room into 12 zones, which can be combined to create layouts of 2, 3 ,4 , 6 and 12 equal-width zones, or any number of combinations of mixed-width zones.
+8- and 10-zone grids are also available.
+
+### Zones
+
+The default CSS uses a 12-zone grid, with each zone being 1280 pixels wide. Other grid configurations are available - see below.
+
+Each zone is absolutely positioned on the display.
+
+![12-zone grid](/images/12-grid.png "12-zone grid")
+
+#### Spanning zones
+
+To extend the width of a zone to span zones to its right, use the classes `span-2` through `span-12` as required. Remember that the appropriate position class must still be included.
+
+The image below shows a few examples of combining position and span classes to create different layouts. Many other combinations are possible.
+
+![12-zone grid layout examples](/images/12-grid-span.png "12-zone grid layout examples")
+
+Using the default 12-zone grid, you can combine position and span classes to achieve a layout with 1, 2, 3, 4, 6 or 12 equal-width zones. Here's's the HTML for a layout with 4 equal-width zones (i.e. each occupying one quareter of the space):
+
+### Using alternate grids
+
+#### 8-zone grid
+
+The 8-zone grid divides the display into 8 zones, each 1920 pixels wide.
+
+![8-zone grid](/images/8-grid.png "8-zone grid")
+
+Using the 8-zone grid, you can combine position and span classes to achieve a grid of 1, 2, 4, or 8 equal-width zones. Other layouts are possible using span classes.
+
+
+#### 10-zone grid
+
+The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. 
+
+![10-zone grid](/images/10-grid.png "10-zone grid")
+
+Note that, using the 10-zone grid, you can combine position and span classes to achieve a grid of 1, 5 or 10 equal-width zones.
 
 
 ## Building a presentation (via Javascript configuration)
