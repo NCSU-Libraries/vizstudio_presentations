@@ -12,23 +12,23 @@ An HTML/CSS/Javascript framework for creating multimedia presentations in the vi
 
 ## Basic concepts
 
-A presentation is composed of one or more scenes.
+* A presentation is composed of one or more scenes.
 
-A scene is a set of elements displayed at the same time in different positions around the room. Elements can be images, video, or native web content (HTML + Javascript + CSS).
+* A scene is a set of elements displayed at the same time in different positions around the room. Elements can be images, video, or native web content (HTML + Javascript + CSS).
 
-Elements are arranged horizontally around the room according to a prescribed layout.
+* Elements are arranged horizontally around the room according to a prescribed layout.
 
-Layouts are built using a grid that divides the room into zones of equal widths.
+* Layouts are built using a grid that divides the room into zones of equal widths.
 The default grid divides the room into 12 zones, which can be combined to create layouts of 2, 3 ,4 , 6 and 12 equal-width zones, or any number of combinations of mixed-width zones.
 8- and 10-zone grids are also available.
 
-The grid system and other basic layout rules are defined seprately in the 
+* The grid system and other basic layout rules are defined seprately in the 
 [Visualization Studio HTML Framework](https://github.com/NCSU-Libraries/vizstudio_html_framework).
 
-The layout and content of each scene is defined via a Javascript configuration file.
+* The layout and content of each scene is defined via a Javascript configuration file.
 Scenes are presented in the order in which they are defined in this file. See below for details.
 
-Movement between scenes is controlled via the keyboard. 
+* Movement between scenes is controlled via the keyboard. 
 
 > TODO: Enable self-running presentations that advance automatically wihtout keyboard input
 
