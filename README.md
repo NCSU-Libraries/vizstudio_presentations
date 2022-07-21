@@ -76,7 +76,7 @@ To extend the width of a zone to span zones to its right, use the classes `span-
 
 The image below shows a few examples of combining position and span classes to create different layouts. Many other combinations are possible.
 
-![12-zone grid layout examples](/images/12-grid-span.png "12-zone grid layout examples")
+![12-zone grid layout examples](/media/images/readme/12-grid-span.png "12-zone grid layout examples")
 
 Using the default 12-zone grid, you can combine position and span classes to achieve a layout with 1, 2, 3, 4, 6 or 12 equal-width zones. Here's's the HTML for a layout with 4 equal-width zones (i.e. each occupying one quareter of the space):
 
