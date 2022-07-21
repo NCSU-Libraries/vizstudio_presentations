@@ -68,7 +68,7 @@ The default CSS uses a 12-zone grid, with each zone being 1280 pixels wide. Othe
 
 Each zone is absolutely positioned on the display.
 
-![12-zone grid](/images/12-grid.png "12-zone grid")
+![12-zone grid](/media/images/readme/12-grid.png "12-zone grid")
 
 #### Spanning zones
 
@@ -86,7 +86,7 @@ Using the default 12-zone grid, you can combine position and span classes to ach
 
 The 8-zone grid divides the display into 8 zones, each 1920 pixels wide.
 
-![8-zone grid](/images/8-grid.png "8-zone grid")
+![8-zone grid](/media/images/readme/8-grid.png "8-zone grid")
 
 Using the 8-zone grid, you can combine position and span classes to achieve a grid of 1, 2, 4, or 8 equal-width zones. Other layouts are possible using span classes.
 
@@ -95,7 +95,7 @@ Using the 8-zone grid, you can combine position and span classes to achieve a gr
 
 The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. 
 
-![10-zone grid](/images/10-grid.png "10-zone grid")
+![10-zone grid](/media/images/readme/10-grid.png "10-zone grid")
 
 Note that, using the 10-zone grid, you can combine position and span classes to achieve a grid of 1, 5 or 10 equal-width zones.
 
