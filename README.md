@@ -27,7 +27,7 @@ Scenes are presented in the order in which they are defined in this file. See be
 
 * Movement between scenes is controlled via the keyboard. 
 
-> TODO: Enable self-running presentations that advance automatically wihtout keyboard input
+   > TODO: Enable self-running presentations that advance automatically wihtout keyboard input
 
 
 
@@ -64,17 +64,13 @@ The default grid divides the room into 12 zones, which can be combined to create
 
 ### Zones
 
-The default CSS uses a 12-zone grid, with each zone being 1280 pixels wide. Other grid configurations are available - see below.
-
-Each zone is absolutely positioned on the display.
+The default CSS uses a 12-zone grid, with each zone being 1280 pixels wide. Other configurations are available by spanning zones - see below.
 
 ![12-zone grid](/media/images/readme/12-grid.png "12-zone grid")
 
 #### Spanning zones
 
-To extend the width of a zone to span zones to its right, use the classes `span-2` through `span-12` as required. Remember that the appropriate position class must still be included.
-
-The image below shows a few examples of combining position and span classes to create different layouts. Many other combinations are possible.
+The width of a zone can be extended to span zones to its right. The image below shows a few examples of spanning zones to create different layouts. Many other combinations are possible.
 
 ![12-zone grid layout examples](/media/images/readme/12-grid-span.png "12-zone grid layout examples")
 
@@ -93,11 +89,9 @@ Using the 8-zone grid, you can combine position and span classes to achieve a gr
 
 #### 10-zone grid
 
-The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. 
+The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. A grid of 5 equal-width zones can be achieved with spanning.
 
 ![10-zone grid](/media/images/readme/10-grid.png "10-zone grid")
-
-Note that, using the 10-zone grid, you can combine position and span classes to achieve a grid of 1, 5 or 10 equal-width zones.
 
 
 ## Building a presentation (via Javascript configuration)
@@ -126,13 +120,7 @@ function config() {
 
 Scenes are added using the `conf.addScene()` function. Scenes are presented in the order in which they appear in this file. 
 
-.......
-passing the following arguments:
-
-* `layout` - An array of objects, each specifying a content item displayed in one poisition on the display
-* `grid` - 8 (for a 8-zone layout) or 10 (for a 10-zone layout)
-
-The objects in the `layouts` array have this format:
+The content of each zone is specified in the `layout` section. The objects in the `layouts` array have this format:
 
     ```
     {
@@ -165,7 +153,7 @@ Here is an example of a scene with 12 different images, using the default 12-zon
   })
   ```
 
-See `js/config_example.js` for more examples.
+See [`js/config_example.js`](js/config_example.js) for more examples.
 
 
 ### Presentation settings
