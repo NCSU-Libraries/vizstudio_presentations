@@ -14,45 +14,20 @@ An HTML/CSS/Javascript framework for creating multimedia presentations in the vi
 
 * A presentation is composed of one or more scenes.
 
-* A scene is a set of elements displayed at the same time in different positions around the room. Elements can be images, video, or native web content (HTML + Javascript + CSS).
+* A scene is a set of elements displayed at the same time in different positions around the room, according to a prescribed layout. Elements can be images, video, or native web content (HTML + Javascript + CSS).
 
    > NOTE: Use of standalone audio content is planned but not yet supported.
 
-* Elements are arranged horizontally around the room according to a prescribed layout.
-
-* Layouts are built using a grid that divides the room into zones of equal widths.
-The default grid divides the room into 12 zones, which can be combined to create layouts of 2, 3 ,4 , 6 and 12 equal-width zones, or any number of combinations of mixed-width zones.
-8- and 10-zone grids are also available.
+* Layouts are defined using a grid system that divides the room into zones of equal widths.
+The default grid divides the room into 12 zones, which can be combined to create layouts of 2, 3 ,4 , 6 and 12 equal-width zones, or any number of combinations of mixed-width zones. 8- and 10-zone grids are also available.
 
 * The layout and content of each scene is defined via a Javascript configuration file.
-Scenes are presented in the order in which they are defined in this file. See below for details.
+Scenes are presented in the order in which they are defined in this file.
 
 * Movement between scenes is controlled via the keyboard. 
 
    > TODO: Enable self-running presentations that advance automatically wihtout keyboard input
 
-
-
-## Directory structure and overview of included files
-
-* `css/` - All CSS files are in here
-  * `vizstudio.css` - Base styles from [Visualization Studio HTML Framework](https://github.ncsu.edu/ncsu-libraries/vizstudio_html_framework)
-  * `vizstudio_grid10` - Additional styles required for 10-zone layouts
-  * `vizstudio_grid8` - Additional styles required for 8-zone layouts
-  * `vizstudio_prez.css` - Styles for this presentation framework. To override any of these, link a separate CSS file after this one that overrides these declarations. Avoid editing this file.
-* `js/` - All Javascript files go in here
-  * `config.js` - Presentation configuration - this is the main file you'll deal with
-  * `config_example.js` - A sample conifugration file demonstrating various scene layouts and content combinations.
-  * `transform_scale.js` - A utility that scales the display down to fit a laptop or desktop monitor.
-  * `vizprez.js` - The main Javascript that makes everything work. Don't mess with this file unless you know what you're doing and maybe not even then.
-  * `vizstudio_utils.js` - A bunch of utility functions that are shared between Vizstudio projects. Leave it alone, or add new functions at the end.
-* `media/` - All media files for presentations should go here, preferably in appropriate subdirectories:
-  * `audio/` (MP3, WAV)
-  * `images/` (JPG, PNG)
-  * `video/` (MP4, M4V, OGG)
-* `index.html` - The base HTML file – all content is presented via this file
-* `README.md` - The file you are reading right now.
-* `zip.sh` - A Linux/Mac shell script to zip presentation files for transfer
 
 
 ## Layouts
@@ -206,6 +181,25 @@ Using custom, dynamic HTML content requires these steps:
 * Videos and images will be scaled (up or down) to fit the display height (1080 px). This may result in the sides of the video being "cropped" (if too wide), or its being centered in the available space with blank space on each side (if too narrow).
 
 
+## Directory structure and overview of included files
 
+* `css/` - All CSS files are in here
+  * `vizstudio.css` - Base styles from [Visualization Studio HTML Framework](https://github.ncsu.edu/ncsu-libraries/vizstudio_html_framework)
+  * `vizstudio_grid10` - Additional styles required for 10-zone layouts
+  * `vizstudio_grid8` - Additional styles required for 8-zone layouts
+  * `vizstudio_prez.css` - Styles for this presentation framework. To override any of these, link a separate CSS file after this one that overrides these declarations. Avoid editing this file.
+* `js/` - All Javascript files go in here
+  * `config.js` - Presentation configuration - this is the main file you'll deal with
+  * `config_example.js` - A sample conifugration file demonstrating various scene layouts and content combinations.
+  * `transform_scale.js` - A utility that scales the display down to fit a laptop or desktop monitor.
+  * `vizprez.js` - The main Javascript that makes everything work. Don't mess with this file unless you know what you're doing and maybe not even then.
+  * `vizstudio_utils.js` - A bunch of utility functions that are shared between Vizstudio projects. Leave it alone, or add new functions at the end.
+* `media/` - All media files for presentations should go here, preferably in appropriate subdirectories:
+  * `audio/` (MP3, WAV)
+  * `images/` (JPG, PNG)
+  * `video/` (MP4, M4V, OGG)
+* `index.html` - The base HTML file – all content is presented via this file
+* `README.md` - The file you are reading right now.
+* `zip.sh` - A Linux/Mac shell script to zip presentation files for transfer
 
 
