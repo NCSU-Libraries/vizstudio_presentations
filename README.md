@@ -37,7 +37,7 @@ Scenes are presented in the order in which they are defined in this file.
 
 ### Layouts
 
-Layouts are built using a grid that divides the room into zones of equal widths.
+Layouts are defined using a grid that divides the room into zones of equal widths.
 The default grid divides the room into 12 zones, which can be combined to create layouts of 2, 3 ,4 , 6 and 12 equal-width zones, or any number of combinations of mixed-width zones.
 8- and 10-zone grids are also available.
 
@@ -60,7 +60,6 @@ The image below shows a few examples of spanning zones to create different layou
 
 ![12-zone grid layout examples](/media/images/readme/12-grid-span.png "12-zone grid layout examples")
 
-
 #### Alternate grids
 
 ##### 8-zone grid
@@ -78,7 +77,7 @@ The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. A gri
 
 ![10-zone grid](/media/images/readme/10-grid.png "10-zone grid")
 
-As with the 12-zone grid, many other layouts are possible using spans.
+Many other layouts are possible using spans.
 
 
 ### Defining a presentation: `config.js`
