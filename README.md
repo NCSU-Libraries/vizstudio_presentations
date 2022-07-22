@@ -4,13 +4,20 @@ An HTML/CSS/Javascript framework for creating multimedia presentations in the vi
 
 > This project is a work in progress. If you have ideas for new functionality, please submit an issue.
 
+## Running a presentation
 
-## Demo
+### Demo presentation (in Google Drive)
 
 > TK - LINK TO DEMO CONTENT AND INSTRUCTIONS TO GET IT RUNNING
 
+### Keyboard controls
 
-## Basic concepts
+> TK
+
+
+## Building a presentation
+
+### Basic concepts
 
 * A presentation is composed of one or more scenes.
 
@@ -28,50 +35,53 @@ Scenes are presented in the order in which they are defined in this file.
 
    > TODO: Enable self-running presentations that advance automatically wihtout keyboard input
 
-
-
-## Layouts
-
-> The grid system is described in more detail in the 
-[Visualization Studio HTML Framework](https://github.com/NCSU-Libraries/vizstudio_html_framework).
+### Layouts
 
 Layouts are built using a grid that divides the room into zones of equal widths.
 The default grid divides the room into 12 zones, which can be combined to create layouts of 2, 3 ,4 , 6 and 12 equal-width zones, or any number of combinations of mixed-width zones.
 8- and 10-zone grids are also available.
 
-### Zones
+> The grid system is described in more detail in the 
+[Visualization Studio HTML Framework](https://github.com/NCSU-Libraries/vizstudio_html_framework).
 
-The default CSS uses a 12-zone grid, with each zone being 1280 pixels wide. Other configurations are available by spanning zones - see below.
+#### Zones
+
+The default CSS uses a 12-zone grid, with each zone being 1280 pixels wide. Other configurations are available by spanning zones (see below).
 
 ![12-zone grid](/media/images/readme/12-grid.png "12-zone grid")
 
-#### Spanning zones
+##### Spanning zones
 
-The width of a zone can be extended to span zones to its right. The image below shows a few examples of spanning zones to create different layouts. Many other combinations are possible.
+The width of a zone can be extended to span zones to its right.
+Using the default 12-zone grid, you can combine position and span to achieve a layout with 1, 2, 3, 4, 6 or 12 equal-width zones,
+or any number of combinations of mixed-width zones.
+
+The image below shows a few examples of spanning zones to create different layouts. Many other combinations are possible.
 
 ![12-zone grid layout examples](/media/images/readme/12-grid-span.png "12-zone grid layout examples")
 
-Using the default 12-zone grid, you can combine position and span classes to achieve a layout with 1, 2, 3, 4, 6 or 12 equal-width zones. Here's's the HTML for a layout with 4 equal-width zones (i.e. each occupying one quareter of the space):
 
-### Alternate grids
+#### Alternate grids
 
-#### 8-zone grid
+##### 8-zone grid
 
 The 8-zone grid divides the display into 8 zones, each 1920 pixels wide.
 
 ![8-zone grid](/media/images/readme/8-grid.png "8-zone grid")
 
-Using the 8-zone grid, you can combine position and span classes to achieve a grid of 1, 2, 4, or 8 equal-width zones. Other layouts are possible using span classes.
+As with the 12-zone grid, many other layouts are possible using spans.
 
 
-#### 10-zone grid
+##### 10-zone grid
 
-The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. A grid of 5 equal-width zones can be achieved with spanning.
+The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. A grid of 5 equal-width zones can also be achieved using the 10-zone grid.
 
 ![10-zone grid](/media/images/readme/10-grid.png "10-zone grid")
 
+As with the 12-zone grid, many other layouts are possible using spans.
 
-## Building a presentation (via Javascript configuration)
+
+### Defining a presentation: `config.js`
 
 `js/config.js` is used to define the presentation content. The default `config.js` file looks like this:
 
@@ -93,7 +103,7 @@ function config() {
 }
 ```
 
-### Presentation settings
+#### Presentation settings
 
 Currently there is only one setting that applies to the whole presentation:
 
@@ -104,11 +114,11 @@ conf.transitionInterval = 1000
 This specifies the speed of the crossfade transition between scenes (in miliseconds)
 
 
-### Adding Scenes: `conf.addScene()`
+#### Adding Scenes: `conf.addScene()`
 
 Scenes are added using the `conf.addScene()` function. Scenes are presented in the order in which they appear in this file. 
 
-#### `layout`
+##### `layout`
 
 The `layout` element is an array (list) of zone definitions (see below).
 
@@ -123,7 +133,7 @@ The `layout` element is an array (list) of zone definitions (see below).
 ```
 
 
-#### Zone definitions
+##### Zone definitions
 
 The `layouts` array contains one or more zone definitions, which are Javascript objects with this format.
 
@@ -137,7 +147,7 @@ The `layouts` array contains one or more zone definitions, which are Javascript 
 }
 ```
 
-#### Scene example
+##### Scene example
 
 Here is an example of a scene using the default 12-zone grid, with alternating short (video) and long (image) zones:
 
@@ -159,7 +169,7 @@ conf.addScene({
 See [`js/config_example.js`](js/config_example.js) for more examples.
 
 
-### Using custom HTML/Javascript
+#### Using custom HTML/Javascript
 
 Using custom, dynamic HTML content requires these steps:
 
@@ -174,14 +184,14 @@ Using custom, dynamic HTML content requires these steps:
    ```
 
 
-## Content requirements and considerations
+### Content requirements and considerations
 
 * For best results, video files and images should be created at the size they will display (see zone dimensions above).
 
 * Videos and images will be scaled (up or down) to fit the display height (1080 px). This may result in the sides of the video being "cropped" (if too wide), or its being centered in the available space with blank space on each side (if too narrow).
 
 
-## Directory structure and overview of included files
+### Directory structure and overview of included files
 
 * `css/` - All CSS files are in here
   * `vizstudio.css` - Base styles from [Visualization Studio HTML Framework](https://github.ncsu.edu/ncsu-libraries/vizstudio_html_framework)
