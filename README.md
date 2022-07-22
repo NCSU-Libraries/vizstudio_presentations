@@ -184,7 +184,7 @@ Using custom, dynamic HTML content requires these steps:
 
 For best results, video files and images should be created at the size they will display (see zone dimensions above).
 
-Videos and images will be scaled (up or down) to fit the display height (1080 px). This may result in the sides of the video being "cropped" (if too wide) or in euqal amounts of blank space on each side (if too narrow).
+Videos and images will be scaled (up or down) to fit the display height (1080 px). This may result in the sides of the video being "cropped" (if too wide), or its being centered in the available space with blank space on each side (if too narrow).
 
 
 
