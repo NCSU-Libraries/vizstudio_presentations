@@ -170,10 +170,10 @@ See [`js/config_example.js`](js/config_example.js) for more examples.
 
 #### Using custom HTML/Javascript
 
-Using custom, dynamic HTML content requires these steps:
+A variety of dynamic content can be included in a presentation by using custom Javascript and CSS.
 
 1. Create custom Javascript and CSS files and copy them to `js/` and `css/` respectively.
-2. Edit `.index.html` to include your custom Javascript and CSS. See comments in the file for more info.
+2. Edit `.index.html` to include your custom Javascript and CSS.See comments in the file for more info.
 3. Add HTML to the scene configuration as `content`. In a common scneario, this would be an HTML element targeted by your Javascript.
 
    ```
