@@ -16,6 +16,8 @@ An HTML/CSS/Javascript framework for creating multimedia presentations in the vi
 
 * A scene is a set of elements displayed at the same time in different positions around the room. Elements can be images, video, or native web content (HTML + Javascript + CSS).
 
+   > NOTE: Use of standalone audio content is planned but not yet supported.
+
 * Elements are arranged horizontally around the room according to a prescribed layout.
 
 * Layouts are built using a grid that divides the room into zones of equal widths.
@@ -76,7 +78,7 @@ The width of a zone can be extended to span zones to its right. The image below 
 
 Using the default 12-zone grid, you can combine position and span classes to achieve a layout with 1, 2, 3, 4, 6 or 12 equal-width zones. Here's's the HTML for a layout with 4 equal-width zones (i.e. each occupying one quareter of the space):
 
-### Using alternate grids
+### Alternate grids
 
 #### 8-zone grid
 
@@ -180,17 +182,10 @@ Using custom, dynamic HTML content requires these steps:
 
 ## Content requirements and considerations
 
-### Video
+For best results, video files and images should be created at the size they will display (see zone dimensions above).
 
-> TK
+Videos and images will be scaled (up or down) to fit the display height (1080 px). This may result in the sides of the video being "cropped" (if too wide) or in euqal amounts of blank space on each side (if too narrow).
 
-### Images
-
-> TK
-
-### Audio
-
-> Use of standalone audio content is planned but not yet supported.
 
 
 
