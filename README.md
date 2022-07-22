@@ -101,7 +101,7 @@ The 10-zone grid divides the display into 10 zones, each 1536 pixels wide. A gri
 ```
 function config() {
   var conf = new VizPrezConfig();
-// *** No edits above here ***
+  // *** No edits above here ***
 
 
   // Set transition interval (fade time) in milliseconds
@@ -120,17 +120,7 @@ function config() {
 
 Scenes are added using the `conf.addScene()` function. Scenes are presented in the order in which they appear in this file. 
 
-The content of each zone is specified in the `layout` section. The objects in the `layouts` array have this format:
-
-    ```
-    {
-      zone: <integer indicating the primary zone number (e.g. 1-12)>,
-      span: <number of zones to combine, begining with this one and moving right> (OPTIONAL),
-      contentType: <'image', 'video', or 'html' >,
-      filepath: <path from root to the content file (for image or video)> (REQUIRED FOR 'video' or 'image' contentType),
-      content: <raw HTML text for 'html' contentType> (REQUIRED FOR 'html' contentType)
-    }
-    ```
+The content of each zone is specified in the `layout` section.
 
 Here is an example of a scene with 12 different images, using the default 12-zone grid:
 
@@ -152,6 +142,18 @@ Here is an example of a scene with 12 different images, using the default 12-zon
     ]
   })
   ```
+
+The objects in the `layouts` array have this format:
+
+    ```
+    {
+      zone: <integer indicating the primary zone number (e.g. 1-12)>,
+      span: <number of zones to combine, begining with this one and moving right> (OPTIONAL),
+      contentType: <'image', 'video', or 'html' >,
+      filepath: <path from root to the content file (for image or video)> (REQUIRED FOR 'video' or 'image' contentType),
+      content: <raw HTML text for 'html' contentType> (REQUIRED FOR 'html' contentType)
+    }
+    ```
 
 See [`js/config_example.js`](js/config_example.js) for more examples.
 
@@ -188,7 +190,7 @@ Using custom, dynamic HTML content requires these steps:
 
 ### Audio
 
-> TODO - Enable audio content
+> Use of standalone audio content is planned but not yet supported.
 
 
 
