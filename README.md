@@ -118,48 +118,6 @@ function config() {
 }
 ```
 
-### Adding Scenes
-
-Scenes are added using the `conf.addScene()` function. Scenes are presented in the order in which they appear in this file. 
-
-The content of each zone is specified in the `layout` section.
-
-Here is an example of a scene with 12 different images, using the default 12-zone grid:
-
-```
-  conf.addScene({
-    layout: [
-      { zone: 1, contentType: 'image', filepath: 'media/images/img1.png' },
-      { zone: 2, contentType: 'image', filepath: 'media/images/img2.png' },
-      { zone: 3, contentType: 'image', filepath: 'media/images/img3.png' },
-      { zone: 4, contentType: 'image', filepath: 'media/images/img4.png' },
-      { zone: 5, contentType: 'image', filepath: 'media/images/img5.png' },
-      { zone: 6, contentType: 'image', filepath: 'media/images/img6.png' },
-      { zone: 7, contentType: 'image', filepath: 'media/images/img7.png' },
-      { zone: 8, contentType: 'image', filepath: 'media/images/img8.png' },
-      { zone: 9, contentType: 'image', filepath: 'media/images/img9.png' },
-      { zone: 10, contentType: 'image', filepath: 'media/images/img10.png' },
-      { zone: 11, contentType: 'image', filepath: 'media/images/img11.png' },
-      { zone: 12, contentType: 'image', filepath: 'media/images/img12.png' }
-    ]
-  })
-  ```
-
-The objects in the `layouts` array have this format:
-
-    ```
-    {
-      zone: <integer indicating the primary zone number (e.g. 1-12)>,
-      span: <number of zones to combine, begining with this one and moving right> (OPTIONAL),
-      contentType: <'image', 'video', or 'html' >,
-      filepath: <path from root to the content file (for image or video)> (REQUIRED FOR 'video' or 'image' contentType),
-      content: <raw HTML text for 'html' contentType> (REQUIRED FOR 'html' contentType)
-    }
-    ```
-
-See [`js/config_example.js`](js/config_example.js) for more examples.
-
-
 ### Presentation settings
 
 Currently there is only one setting that applies to the whole presentation:
@@ -171,20 +129,81 @@ conf.transitionInterval = 1000
 This specifies the speed of the crossfade transition between scenes (in miliseconds)
 
 
+### Adding Scenes: `conf.addScene()`
+
+Scenes are added using the `conf.addScene()` function. Scenes are presented in the order in which they appear in this file. 
+
+#### `layout`
+
+The `layout` element is an array (list) of zone definitions (see below).
+
+```
+  conf.addScene({
+    layout: [
+      
+      *** Zone definitions go here (see below) ***
+      
+    ]
+  })
+```
+
+
+#### Zone definitions
+
+The `layouts` array contains one or more zone definitions, which are Javascript objects with this format.
+
+```
+{
+  zone: <integer indicating the primary zone number (1-12)>,
+  span: <number of zones to combine, begining with this one and moving right> (OPTIONAL, 1-12),
+  contentType: <'image', 'video', or 'html' >,
+  filepath: <path from root to the content file (for image or video)> (REQUIRED FOR 'video' or 'image' contentType),
+  content: <raw HTML text for 'html' contentType> (REQUIRED FOR 'html' contentType)
+}
+```
+
+#### Scene example
+
+Here is an example of a scene using the default 12-zone grid, with alternating short (video) and long (image) zones:
+
+```
+conf.addScene({
+ layout: [
+   { zone: 1, contentType: 'video', filepath: 'media/video/vid1.mp4' },
+   { zone: 2, span: 2, contentType: 'image', filepath: 'media/images/img1.png' },
+   { zone: 4, contentType: 'video', filepath: 'media/video/vid2.mp4' },
+   { zone: 5, span: 2, contentType: 'image', filepath: 'media/images/img2.png' },
+   { zone: 7, contentType: 'video', filepath: 'media/video/vid3.mp4' },
+   { zone: 8, span: 2, contentType: 'image', filepath: 'media/images/img3.png' },
+   { zone: 10, contentType: 'video', filepath: 'media/video/vid4.mp4' },
+   { zone: 11, span: 2, contentType: 'image', filepath: 'media/images/img4.png' },
+ ]
+})
+```
+
+See [`js/config_example.js`](js/config_example.js) for more examples.
+
+
 ### Using custom HTML/Javascript
 
 Using custom, dynamic HTML content requires these steps:
 
-1. Create custon Javascript and CSS files and copy them to `js/` and `css/` respectively
+1. Create custom Javascript and CSS files and copy them to `js/` and `css/` respectively.
 2. Edit `.index.html` to include your custom Javascript and CSS. See comments in the file for more info.
-3. Add HTML to the scene configuration as `content` (see above). It's recommended to limit this to a single HTML element (e.g. a `<div>`), and to use Javascript to insert content into that element.
+3. Add HTML to the scene configuration as `content`. In a common scneario, this would be an HTML element targeted by your Javascript.
+
+   ```
+   {
+     zone: 1, contentType: 'html', content: '<div id="hello"></div>'
+   }
+   ```
 
 
 ## Content requirements and considerations
 
-For best results, video files and images should be created at the size they will display (see zone dimensions above).
+* For best results, video files and images should be created at the size they will display (see zone dimensions above).
 
-Videos and images will be scaled (up or down) to fit the display height (1080 px). This may result in the sides of the video being "cropped" (if too wide), or its being centered in the available space with blank space on each side (if too narrow).
+* Videos and images will be scaled (up or down) to fit the display height (1080 px). This may result in the sides of the video being "cropped" (if too wide), or its being centered in the available space with blank space on each side (if too narrow).
 
 
 
